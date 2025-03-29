@@ -15,25 +15,14 @@
   home.sessionVariables = {
   };
 
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "SpaceMono Nerd Font";
-      size = 14;
-    };
-  };
+  imports = [
+    ./modules/kitty.nix
+    ./modules/zsh.nix
+  ];
 
   programs.starship = {
     enable = true;
     settings = pkgs.lib.importTOML ../configs/starship/starship.toml;
-  };
-
-  programs.zsh = {
-  	enable = true;
-	shellAliases = {
-		ll = "ls -l";
-		grep = "grep --color=auto";
-	};
   };
 
   # Let Home Manager install and manage itself.
