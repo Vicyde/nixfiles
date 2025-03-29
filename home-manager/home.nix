@@ -25,7 +25,7 @@
 
   programs.starship = {
     enable = true;
-    settings = pkgs.lib.importTOML ../../configs/starship/starship.toml;
+    settings = pkgs.lib.importTOML ../configs/starship/starship.toml;
   };
 
   programs.zsh = {

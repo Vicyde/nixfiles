@@ -39,7 +39,6 @@
 
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
 
   programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse.out}/libexec/seahorse/ssh-askpass";
 
@@ -81,6 +80,7 @@
      kitty
      libreoffice-qt-fresh
      neovim 
+     tree
      vscode
   ];
 

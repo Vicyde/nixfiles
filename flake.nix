@@ -28,7 +28,7 @@
 		  	auc = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
 			  	modules = [
-				  	./hosts/nixos/home.nix
+				  	./home-manager/home.nix
 			  	];
 			  };
 		  };
