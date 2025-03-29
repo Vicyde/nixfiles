@@ -65,7 +65,6 @@
     description = "Jasper Reuhman";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     ];
     shell = pkgs.zsh;
   };
@@ -76,6 +75,7 @@
   environment.systemPackages = with pkgs; [
      bat
      brave
+     emacs
      git
      kitty
      libreoffice-qt-fresh
