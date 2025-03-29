@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   users.users.auc = {
     isNormalUser = true;
     description = "Jasper Reuhman";
