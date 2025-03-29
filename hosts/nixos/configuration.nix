@@ -8,6 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      ./modules/fonts.nix
+      ./modules/locale.nix
+      ./modules/packages.nix
+      ./modules/users.nix
     ];
 
   # Bootloader.
@@ -15,32 +20,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-
   networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nl_NL.UTF-8";
-    LC_IDENTIFICATION = "nl_NL.UTF-8";
-    LC_MEASUREMENT = "nl_NL.UTF-8";
-    LC_MONETARY = "nl_NL.UTF-8";
-    LC_NAME = "nl_NL.UTF-8";
-    LC_NUMERIC = "nl_NL.UTF-8";
-    LC_PAPER = "nl_NL.UTF-8";
-    LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "nl_NL.UTF-8";
-  };
-
   services.xserver.enable = true;
-
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.seahorse.out}/libexec/seahorse/ssh-askpass";
 
   services.xserver.xkb = {
     layout = "us";
@@ -58,36 +45,7 @@
     pulse.enable = true;
   };
 
-
-  users.users.auc = {
-    isNormalUser = true;
-    description = "Jasper Reuhman";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
-    shell = pkgs.zsh;
-  };
-
   nixpkgs.config.allowUnfree = true;
-
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     bat
-     brave
-     emacs
-     gh
-     git
-     kitty
-     libreoffice-qt-fresh
-     neovim 
-     tree
-     vscode
-  ];
-
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "SpaceMono" ]; })
-  ];
-
 
   programs.zsh.enable = true;
 
