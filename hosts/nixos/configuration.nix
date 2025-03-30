@@ -45,6 +45,11 @@
     pulse.enable = true;
   };
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  }; 
+
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
