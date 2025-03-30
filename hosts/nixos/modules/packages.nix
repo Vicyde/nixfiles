@@ -8,6 +8,7 @@
      kitty
      libreoffice-qt-fresh
      neovim 
+     obsidian
      tree
      vscode
   ];

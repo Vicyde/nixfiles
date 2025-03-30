@@ -1,12 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "auc";
   home.homeDirectory = "/home/auc";
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  home.packages = [
+  home.packages = with pkgs; [
   ];
 
   home.file = {
