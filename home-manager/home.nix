@@ -9,6 +9,11 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    brave
+    emacs
+    libreoffice-qt-fresh
+    obsidian
+    vscode
   ];
 
   home.file = {
