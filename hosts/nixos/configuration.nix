@@ -48,6 +48,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.avahi.enable = true;
+
   programs.zsh.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

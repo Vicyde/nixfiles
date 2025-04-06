@@ -7,5 +7,4 @@
      neovim 
      tree
   ];
-
 }
