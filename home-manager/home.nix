@@ -10,7 +10,6 @@
 
   home.packages = with pkgs; [
     brave
-    emacs
     libreoffice-qt-fresh
     obsidian
     vscode
