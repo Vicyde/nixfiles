@@ -23,6 +23,7 @@
   };
 
   imports = [
+    ./modules/emacs.nix
     ./modules/kitty.nix
     ./modules/zsh.nix
   ];
